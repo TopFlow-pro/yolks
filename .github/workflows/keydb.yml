@@ -32,9 +32,9 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
       - uses: docker/build-push-action@v2
         with:
-          context: ./redis
+          context: ./keydb
           file: ./keydb/${{ matrix.tag }}/Dockerfile
           platforms: linux/amd64,linux/arm64
           push: true
           tags: |
-            ghcr.io/TopFlow-pro/yolks:keydb_${{ matrix.tag }}
+            ghcr.io/topflow-pro/yolks:keydb_${{ matrix.tag }}
